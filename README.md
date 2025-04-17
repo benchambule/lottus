@@ -1,0 +1,2 @@
+# lottus
+Golang Bot
