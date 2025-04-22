@@ -12,8 +12,6 @@ type MessageProvider interface {
 	Get(n string) (error, Message)
 }
 
-type Processor func(r *Request, res Message) Message
-
 func DefaultProcessor(app App) Processor {
 	return func(req *Request, res Message) Message {
 		err, val := res.Input.Validate(*req, res)
