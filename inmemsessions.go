@@ -1,15 +1,15 @@
 package lottus
 
 type InMemorySessionStorage struct {
-	sessions map[string]Session
+	Sessions map[string]Session
 }
 
 func (ss InMemorySessionStorage) Get(id string) (error, Session) {
-	return nil, ss.sessions[id]
+	return nil, ss.Sessions[id]
 }
 
 func (ss InMemorySessionStorage) Add(s Session) error {
-	ss.sessions[s.Msisdn] = s
+	ss.Sessions[s.Msisdn] = s
 	return nil
 }
 
@@ -18,6 +18,6 @@ func (ss InMemorySessionStorage) Delete(s Session) error {
 }
 
 func (ss InMemorySessionStorage) Update(s Session) error {
-	ss.sessions[s.Msisdn] = s
+	ss.Sessions[s.Msisdn] = s
 	return nil
 }
